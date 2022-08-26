@@ -1,8 +1,10 @@
 import {View, TextInput, StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const FooterChat = ({onChange, value}) => {
+const FooterChat = ({onChange, value, onPressSendClick}) => {
+  const [isActive, setIsActive] = useState(true);
+
   return (
     <View style={styles.contain}>
       <Icon
@@ -12,22 +14,41 @@ const FooterChat = ({onChange, value}) => {
         color="#007AFF"
       />
       <View style={styles.textInputView}>
-        <TextInput value={value} style={styles.textInput} onChange={onChange} />
-      </View>
-      <View style={styles.leftIconView}>
-        <Icon
-          style={styles.margin3}
-          name="ios-camera-outline"
-          size={30}
-          color="#007AFF"
-        />
-        <Icon
-          style={styles.margin3}
-          name="ios-mic-outline"
-          size={30}
-          color="#007AFF"
+        <TextInput
+          value={value}
+          style={styles.textInput}
+          onChangeText={onChange}
+          onFocus={() => {
+            setIsActive(false);
+          }}
         />
       </View>
+      {isActive === true ? (
+        <View style={styles.leftIconView}>
+          <Icon
+            style={styles.margin3}
+            name="ios-camera-outline"
+            size={30}
+            color="#007AFF"
+          />
+          <Icon
+            style={styles.margin3}
+            name="ios-mic-outline"
+            size={30}
+            color="#007AFF"
+          />
+        </View>
+      ) : (
+        <View style={styles.leftIconView}>
+          <Icon
+            style={styles.margin3}
+            name="ios-send"
+            size={30}
+            color="#007AFF"
+            onPress={onPressSendClick}
+          />
+        </View>
+      )}
     </View>
   );
 };
@@ -47,7 +68,7 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   textInput: {
-    width: '68%',
+    minWidth: '68%',
     height: 35,
   },
   margin3: {
@@ -55,6 +76,8 @@ const styles = StyleSheet.create({
   },
   leftIconView: {
     flexDirection: 'row',
+    justifyContent: 'center',
+    flex: 1,
   },
   marginleft5: {
     marginLeft: 5,
