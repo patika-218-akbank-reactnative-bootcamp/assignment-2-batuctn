@@ -11,7 +11,9 @@ const ChatItems = ({route, navigation}) => {
     setMessage([...message, answer]);
     setAnswer(null);
   };
-
+  let tarih = new Date();
+  var saat = tarih.getHours() + 3;
+  var dakika = tarih.getMinutes();
   return (
     <View style={styles.contain}>
       <HeaderChat firstName={firstName} lastName={lastName} image={image} />
@@ -29,6 +31,9 @@ const ChatItems = ({route, navigation}) => {
             return (
               <View key={index} style={styles.answerWiew}>
                 <Text style={styles.responseMessage}>{item}</Text>
+                <View style={styles.datetime}>
+                  <Text>{`${saat}:${dakika}`}</Text>
+                </View>
               </View>
             );
           })}
