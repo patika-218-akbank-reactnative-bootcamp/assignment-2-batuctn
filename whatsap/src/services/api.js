@@ -5,7 +5,7 @@ const chatData = [
       id: '1',
       firstName: 'Cem',
       lastName: 'Eriş',
-      image: 'url',
+      image: require('../assets/1.jpg'),
     },
     messages: [
       {
@@ -20,6 +20,7 @@ const chatData = [
       id: '1',
       firstName: 'Kaan',
       lastName: 'Can',
+      image: require('../assets/2.jpg'),
     },
     messages: [
       {
@@ -32,69 +33,14 @@ const chatData = [
     id: '3',
     receiver: {
       id: '1',
-      firstName: 'Kaan',
-      lastName: 'Can',
+      firstName: 'Ertuğrul Gazi',
+      lastName: 'Yıldız',
+      image: require('../assets/3.jpg'),
     },
     messages: [
       {
-        text: 'Merada buluşalım',
-        datetime: '19:45',
-      },
-    ],
-  },
-  {
-    id: '4',
-    receiver: {
-      id: '1',
-      firstName: 'Kaan',
-      lastName: 'Can',
-    },
-    messages: [
-      {
-        text: 'Merada buluşalım',
-        datetime: '19:45',
-      },
-    ],
-  },
-  {
-    id: '5',
-    receiver: {
-      id: '1',
-      firstName: 'Kaan',
-      lastName: 'Can',
-    },
-    messages: [
-      {
-        text: 'Merada buluşalım',
-        datetime: '19:45',
-      },
-    ],
-  },
-  {
-    id: '6',
-    receiver: {
-      id: '1',
-      firstName: 'Kaan',
-      lastName: 'Can',
-    },
-    messages: [
-      {
-        text: 'Merada buluşalım',
-        datetime: '19:45',
-      },
-    ],
-  },
-  {
-    id: '7',
-    receiver: {
-      id: '1',
-      firstName: 'Kaan',
-      lastName: 'Can',
-    },
-    messages: [
-      {
-        text: 'Merada buluşalım',
-        datetime: '19:45',
+        text: 'Seni bekliyorum nerede kaldın.',
+        datetime: '20:45',
       },
     ],
   },
