@@ -8,7 +8,7 @@ const ProfileImage = ({image, height, width}) => {
   };
   return (
     <View style={[styles.image, inlineStyle]}>
-      <Image source={image} />
+      <Image resizeMode="cover" source={image} />
     </View>
   );
 };
