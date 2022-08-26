@@ -12,7 +12,7 @@ const ChatList = () => {
         navigate('ChatItems', {
           firstName: item.receiver.firstName,
           lastName: item.receiver.lastName,
-          messages: item.messages[0].text,
+          receivedMessages: item.messages[0].text,
           datetime: item.messages[0].datetime,
           image: item.receiver.image,
         });
@@ -33,9 +33,7 @@ const ChatList = () => {
       </View>
     </TouchableOpacity>
   );
-  return (
-    <FlatList nestedScrollEnabled data={chatData} renderItem={renderUser} />
-  );
+  return <FlatList data={chatData} renderItem={renderUser} />;
 };
 
 const styles = StyleSheet.create({
