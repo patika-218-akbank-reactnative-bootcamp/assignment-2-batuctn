@@ -14,6 +14,7 @@ const ChatList = () => {
           lastName: item.receiver.lastName,
           messages: item.messages[0].text,
           datetime: item.messages[0].datetime,
+          image: item.receiver.image,
         });
       }}>
       <View style={styles.contain}>
