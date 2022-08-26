@@ -4,8 +4,14 @@ import HeaderChat from '../components/HeaderChat';
 import FooterChat from '../components/FooterChat';
 
 const ChatItems = ({route, navigation}) => {
-  const {firstName, lastName, messages, datetime, image} = route.params;
+  const {firstName, lastName, receivedMessages, datetime, image} = route.params;
   const [answer, setAnswer] = useState(null);
+  const [message, setMessage] = useState([]);
+  const handleClick = () => {
+    setMessage([...message, answer]);
+    setAnswer(null);
+  };
+
   return (
     <View style={styles.contain}>
       <HeaderChat firstName={firstName} lastName={lastName} image={image} />
@@ -14,19 +20,25 @@ const ChatItems = ({route, navigation}) => {
         resizeMode="cover">
         <View style={styles.backgroundview}>
           <View style={styles.responseWiew}>
-            <Text style={styles.responseMessage}>{messages}</Text>
+            <Text style={styles.responseMessage}>{receivedMessages}</Text>
             <View style={styles.datetime}>
               <Text>{datetime}</Text>
             </View>
           </View>
-          {answer ? (
-            <View style={styles.answerWiew}>
-              <Text style={styles.responseMessage}>{answer}</Text>
-            </View>
-          ) : null}
+          {message.map((item, index) => {
+            return (
+              <View key={index} style={styles.answerWiew}>
+                <Text style={styles.responseMessage}>{item}</Text>
+              </View>
+            );
+          })}
         </View>
       </ImageBackground>
-      <FooterChat value={answer} />
+      <FooterChat
+        value={answer}
+        onChange={newText => setAnswer(newText)}
+        onPressSendClick={handleClick}
+      />
     </View>
   );
 };
