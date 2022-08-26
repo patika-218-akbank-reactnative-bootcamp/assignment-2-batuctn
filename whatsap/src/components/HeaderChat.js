@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Icons from 'react-native-vector-icons/Octicons';
 import ProfileImage from '../components/ProfileImage';
 import {useNavigation} from '@react-navigation/native';
-const HeaderChat = ({firstName, lastName}) => {
+const HeaderChat = ({firstName, lastName, image}) => {
   const {goBack} = useNavigation();
   return (
     <View style={styles.contain}>
@@ -17,7 +17,7 @@ const HeaderChat = ({firstName, lastName}) => {
         color="#007AFF"
         style={styles.padding5}
       />
-      <ProfileImage height={40} width={40} image={require('../assets/1.jpg')} />
+      <ProfileImage height={40} width={40} image={image} />
       <Text style={styles.headerText}>{`${firstName} ${lastName}`}</Text>
       <View style={styles.headerRightİconView}>
         <Icons
