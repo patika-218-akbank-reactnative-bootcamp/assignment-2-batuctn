@@ -24,16 +24,24 @@
 
 ## Getting Started
 Clone repository  https://github.com/patika-218-akbank-reactnative-bootcamp/assignment-2-batuctn.git and then
+<br/>
 npm install 
+<br/>
 npx react-native run-android
+<br/>
 if dosent work automatic node.js(metro)
+<br/>
 npx react-native start
 ### Prerequisites
 
 @react-navigation/native
+<br/>
 @react-navigation/native-stack
+<br/>
 react-native-safe-area-context
+<br/>
 react-native-screens
+<br/>
 react-native-vector-icons
 
 ## Authors
