@@ -5,7 +5,8 @@
 ![2](https://user-images.githubusercontent.com/96943978/186977613-7b2288ab-8c2b-415a-a8c9-9e99cdc1438f.PNG)
 ![3](https://user-images.githubusercontent.com/96943978/186977666-82d8d952-2611-40cf-81bb-5abc6da69800.PNG)
 
-# Instagram Home Page
+
+# Whatsapp Chat
 
 > Whatsap Chat and private message screens lay out.Only works private message function.[Note:FlatList library used recived messages.]Sending messages for used mapping method.Other functions do not work at time moment.I never used a few inline styles.I noticed eslint and pretier rules.
 
@@ -16,23 +17,31 @@
 - CSS
 - JS
 
-## Live Demo (Not available)
+## Live Demo (available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://user-images.githubusercontent.com/96943978/186978912-ef92f987-9ece-409a-912d-aa3b7c04cdb1.mp4)
 
 
 ## Getting Started
 Clone repository  https://github.com/patika-218-akbank-reactnative-bootcamp/assignment-2-batuctn.git and then
+<br/>
 npm install 
+<br/>
 npx react-native run-android
+<br/>
 if dosent work automatic node.js(metro)
+<br/>
 npx react-native start
 ### Prerequisites
 
 @react-navigation/native
+<br/>
 @react-navigation/native-stack
+<br/>
 react-native-safe-area-context
+<br/>
 react-native-screens
+<br/>
 react-native-vector-icons
 
 ## Authors
