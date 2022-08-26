@@ -4,11 +4,11 @@ import HeaderChat from '../components/HeaderChat';
 import FooterChat from '../components/FooterChat';
 
 const ChatItems = ({route, navigation}) => {
-  const {firstName, lastName, messages, datetime} = route.params;
+  const {firstName, lastName, messages, datetime, image} = route.params;
   const [answer, setAnswer] = useState(null);
   return (
     <View style={styles.contain}>
-      <HeaderChat firstName={firstName} lastName={lastName} />
+      <HeaderChat firstName={firstName} lastName={lastName} image={image} />
       <ImageBackground
         source={require('../assets/background.jpg')}
         resizeMode="cover">
