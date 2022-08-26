@@ -1,4 +1,11 @@
-import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import chatData from '../services/api';
 import ProfileImage from './ProfileImage';
@@ -17,20 +24,22 @@ const ChatList = () => {
           image: item.receiver.image,
         });
       }}>
-      <View style={styles.contain}>
-        <View>
-          <ProfileImage image={item.receiver.image} height={60} width={60} />
-        </View>
-        <View style={styles.chatScreen}>
-          <View style={styles.fullNameTextView}>
-            <Text style={styles.fullNameText}>
-              {`${item.receiver.firstName} ${item.receiver.lastName}`}
-            </Text>
-            <Text style={styles.padding3}>{item.messages[0].datetime}</Text>
+      <ScrollView nestedScrollEnabled>
+        <View style={styles.contain}>
+          <View>
+            <ProfileImage image={item.receiver.image} height={60} width={60} />
           </View>
-          <Text style={styles.messages}>{item.messages[0].text}</Text>
+          <View style={styles.chatScreen}>
+            <View style={styles.fullNameTextView}>
+              <Text style={styles.fullNameText}>
+                {`${item.receiver.firstName} ${item.receiver.lastName}`}
+              </Text>
+              <Text style={styles.padding3}>{item.messages[0].datetime}</Text>
+            </View>
+            <Text style={styles.messages}>{item.messages[0].text}</Text>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </TouchableOpacity>
   );
   return <FlatList data={chatData} renderItem={renderUser} />;
